@@ -451,9 +451,7 @@ button {
 .box_main:hover{
     background-color: #ff5a58;
 }
-.box_main.active {
-    background-color: #ff5a58;
-}
+
 .icon_1 {
     width: 100%;
     float: left;

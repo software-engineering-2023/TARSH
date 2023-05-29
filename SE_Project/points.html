@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Credit Card Management</title>
+  
+  <!-- Link the CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/trans-history.css">
+  
+  <style>
+     .purchase-history td:first-child {
+    text-align: center;
+  }
+    .logo {
+      display: flex;
+      justify-content: center;
+    }
+    
+    .back-button {
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    .back-button button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #000000;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+    }
+    
+    .cardNumber {
+      width: 100%;
+    }
+    
+    .redeem-button {
+      background-color: #CD9E28;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .content-container {
+            border: 2px solid #CD9E28;
+            
+    }
+  </style>
+</head>
+<body>
+  <!-- Your HTML content goes here -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
+    <div class="logo"><img src="images/logo.png"></div>
+  </nav>
+
+  <div class="main-container">
+    <div class="current-balance">
+      <h2>857.00</h2>
+      <span>Current Points</span>
+    </div>
+    <div class="content-container">
+      <table class="purchase-history">
+        <thead>
+          <tr>
+            <td>Card</td>
+            <td>Points</td>
+            <td></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="cardNumber"></td>
+            <td class="points"></td>
+            <td><button class="redeem-button">Redeem</button></td>
+          </tr>
+          <tr>
+            <td class="cardNumber"></td>
+            <td class="points"></td>
+            <td><button class="redeem-button">Redeem</button></td>
+          </tr>
+          <tr>
+            <td class="cardNumber"></td>
+            <td class="points"></td>
+            <td><button class="redeem-button">Redeem</button></td>
+          </tr>
+          <tr>
+            <td class="cardNumber"></td>
+            <td class="points"></td>
+            <td><button class="redeem-button">Redeem</button></td>
+          </tr>
+          <tr>
+            <td class="cardNumber"></td>
+            <td class="points"></td>
+            <td><button class="redeem-button">Redeem</button></td>
+          </tr>
+          <tr>
+            <td class="cardNumber"></td>
+            <td class="points"></td>
+            <td><button class="redeem-button">Redeem</button></td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <div class="back-button">
+        <button onclick="window.history.back()">Back</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Generate random card information
+    function generateCardInfo() {
+      var cards = ['Visa', 'Master Card', 'American Express'];
+      return cards[Math.floor(Math.random() * cards.length)];
+    }
+    
+    // Generate random balance
+    function generateBalance() {
+      return (Math.random() * 10000).toFixed(2);
+    }
+    
+    // Generate random credit card number
+    function generateCardNumber() {
+      var cardNumber = '';
+      for (var i = 0; i < 16; i++) {
+        if (i > 0 && i % 4 === 0) {
+          cardNumber += '-';
+        }
+        cardNumber += Math.floor(Math.random() * 10);
+      }
+      return cardNumber;
+    }
+
+    // Generate random points between 100 and 1000
+    function generatePoints() {
+      return Math.floor(Math.random() * (1000 - 100 + 1) + 100);
+    }
+    
+    // Function to handle redeem button click event
+    function handleRedeemButtonClick(event) {
+      var button = event.target;
+      var row = button.parentNode.parentNode;
+      var pointsCell = row.querySelector('.points');
+      var points = parseInt(pointsCell.textContent);
+      var balance = parseFloat(document.querySelector('.current-balance h2').textContent);
+      balance += points;
+      document.querySelector('.current-balance h2').textContent = balance.toFixed(2);
+      row.remove();
+    }
+    
+    // Populate the card information, card number, points, and balance in the table
+    var cardNumberElements = document.getElementsByClassName('cardNumber');
+    var pointsElements = document.getElementsByClassName('points');
+    var redeemButtonElements = document.getElementsByClassName('redeem-button');
+    
+    for (var i = 0; i < cardNumberElements.length; i++) {
+      cardNumberElements[i].textContent = generateCardNumber();
+      pointsElements[i].textContent = generatePoints();
+      
+      // Add click event listener to redeem button
+      redeemButtonElements[i].addEventListener('click', handleRedeemButtonClick);
+    }
+  </script>
+
+</body>
+</html>

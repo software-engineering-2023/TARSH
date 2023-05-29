@@ -1,0 +1,58 @@
+<head>
+    <link rel="stylesheet" href="css/logincss.css">
+    <title>Manage Loans</title>
+    <style>
+        .container {
+            border: 2px solid #CD9E28;
+            padding: 20px;
+        }
+        
+        .container input[type="number"],
+        .container input[type="text"] {
+            width: 100%;
+        }
+        .back-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #000000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="logo"><img src="images/logo.png"></div>
+</nav>
+<div class="container" id="container">
+
+    <div>
+        <form action="services.html">
+            <h1>Apply for a loan</h1>
+            <div>
+                <br>
+            </div>
+            <div class="Credit card">
+                <label for="Card type">Loan type</label>
+                <select id="Card type">
+                    <option value="Savings">Auto Loans</option>
+                    <option value="Current">Personal Loans</option>
+                </select>
+                <br>
+                <input type="number" placeholder="Amount" />
+                <br>
+                <input type="text" placeholder="Reason for taking the loan" />
+            </div>
+            <div>
+                <br>
+            </div>
+            <button onclick="alert('Request submitted successfully!')">Apply</button>
+            <a href="services.html" class="back-button">Back</a>
+        </form>
+    </div>
+</div>
+<script src="js/loginjs.js"></script>

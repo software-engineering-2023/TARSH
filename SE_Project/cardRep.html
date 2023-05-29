@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Credit Card Management</title>
+  
+  <!-- Link the CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/trans-history.css">
+  
+  <style>
+    .purchase-history td {
+      text-align: center;
+    }
+    
+    .logo {
+      display: flex;
+      justify-content: center;
+    }
+    
+    .back-button {
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    .back-button button {
+      background-color: #000000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            margin: 0 auto; /* Center the button horizontally */
+            padding: 10px 20px;
+            font-size: 16px;
+            width: fit-content; /* Adjust the width to fit the button content */
+    }
+    
+    .cardNumber {
+      width: 100%;
+    }
+    
+    .redeem-button {
+      background-color: #00c614;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    .redeem-button2 {
+      background-color: #f30707;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    .content-container {
+      border: 2px solid #CD9E28;
+    }
+  </style>
+</head>
+<body>
+  <!-- Your HTML content goes here -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
+    <div class="logo"><img src="images/logo.png"></div>
+  </nav>
+
+  <div class="main-container">
+    <div class="current-balance">
+      <h2>Replacement Requests</h2>
+    </div>
+    <div class="content-container">
+      <table class="purchase-history">
+        <thead>
+          <tr>
+            <td>Account</td>
+            <td>Card</td>
+            <td>Reason</td>
+            <td></td>
+            <td></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="account"></td>
+            <td class="cardNumber"></td>
+            <td class="reason"></td>
+            <td><button class="redeem-button">Accept</button></td>
+            <td><button class="redeem-button2">Reject</button></td>
+          </tr>
+          <tr>
+            <td class="account"></td>
+            <td class="cardNumber"></td>
+            <td class="reason"></td>
+            <td><button class="redeem-button">Accept</button></td>
+            <td><button class="redeem-button2">Reject</button></td>
+          </tr>
+          <tr>
+            <td class="account"></td>
+            <td class="cardNumber"></td>
+            <td class="reason"></td>
+            <td><button class="redeem-button">Accept</button></td>
+            <td><button class="redeem-button2">Reject</button></td>
+          </tr>
+          <tr>
+            <td class="account"></td>
+            <td class="cardNumber"></td>
+            <td class="reason"></td>
+            <td><button class="redeem-button">Accept</button></td>
+            <td><button class="redeem-button2">Reject</button></td>
+          </tr>
+          <tr>
+            <td class="account"></td>
+            <td class="cardNumber"></td>
+            <td class="reason"></td>
+            <td><button class="redeem-button">Accept</button></td>
+            <td><button class="redeem-button2">Reject</button></td>
+          </tr>
+          <tr>
+            <td class="account"></td>
+            <td class="cardNumber"></td>
+            <td class="reason"></td>
+            <td><button class="redeem-button">Accept</button></td>
+            <td><button class="redeem-button2">Reject</button></td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <div class="back-button">
+        <button onclick="window.history.back()">Back</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Helper function to generate random account numbers
+    function generateAccountNumber() {
+      var accountNumber = Math.floor(Math.random() * 1000000000); // Generates a 9-digit random number
+      return accountNumber;
+    }
+  
+    // Helper function to generate random card numbers
+    function generateCardNumber() {
+      var cardNumber = "";
+      for (var i = 0; i < 16; i++) {
+        if (i > 0 && i % 4 === 0) {
+          cardNumber += "-";
+        }
+        cardNumber += Math.floor(Math.random() * 10);
+      }
+      return cardNumber;
+    }
+  
+    // Helper function to generate random reasons
+    function generateReason() {
+      var reasons = ["Lost", "Broken", "Stolen"];
+      var randomIndex = Math.floor(Math.random() * reasons.length);
+      return reasons[randomIndex];
+    }
+  
+    // Function to populate the table with random account numbers, card numbers, and reasons
+    function populateTable() {
+      var tableRows = document.querySelectorAll('.purchase-history tbody tr');
+      tableRows.forEach(function(row) {
+        var accountCell = row.querySelector('.account');
+        var cardNumberCell = row.querySelector('.cardNumber');
+        var reasonCell = row.querySelector('.reason');
+        accountCell.textContent = generateAccountNumber();
+        cardNumberCell.textContent = generateCardNumber();
+        reasonCell.textContent = generateReason();
+      });
+    }
+  
+    // Function to remove a row from the table
+    function removeRow(row) {
+      row.remove();
+    }
+  
+    // Function to handle the accept button click event
+    function handleAcceptButtonClick(event) {
+      var row = event.target.closest('tr');
+      removeRow(row);
+    }
+  
+    // Function to handle the reject button click event
+    function handleRejectButtonClick(event) {
+      var row = event.target.closest('tr');
+      removeRow(row);
+    }
+  
+    // Add event listeners to the accept buttons
+    var acceptButtons = document.querySelectorAll('.redeem-button');
+    acceptButtons.forEach(function(button) {
+      button.addEventListener('click', handleAcceptButtonClick);
+    });
+  
+    // Add event listeners to the reject buttons
+    var rejectButtons = document.querySelectorAll('.redeem-button2');
+    rejectButtons.forEach(function(button) {
+      button.addEventListener('click', handleRejectButtonClick);
+    });
+  
+    // Call the populateTable function to fill the table with random account numbers, card numbers, and reasons
+    populateTable();
+  </script>
+</body>
+</html>

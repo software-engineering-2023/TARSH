@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Credit Card Management</title>
+  
+  <!-- Link the CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/trans-history.css">
+  
+  <style>
+    .logo {
+      display: flex;
+      justify-content: center;
+    }
+    
+    .back-button {
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    .back-button button {
+      padding: 10px 20px;
+            font-size: 16px;
+            background-color: #000000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+    }
+    .content-container {
+            border: 2px solid #CD9E28;
+            
+    }
+  </style>
+</head>
+<body>
+  <!-- Your HTML content goes here -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
+    <div class="logo"><img src="images/logo.png"></div>
+  </nav>
+
+  <div class="main-container">
+    <div class="current-balance">
+      <h2>$857.68</h2>
+      <span>Current Balance</span>
+    </div>
+    <div class="content-container">
+      <table class="purchase-history">
+        <thead>
+          <tr>
+            <td>Date</td>
+            <td>Type</td>
+            <td>Price</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Mar 12 2023</td>
+            <td>Groceries</td>
+            <td>-$118.64</td>
+          </tr>
+          <tr>
+            <td>Mar 8 2023</td>
+            <td>Internet</td>
+            <td>-$79.09</td>
+          </tr>
+          <tr>
+            <td>Feb 22 2023</td>
+            <td>Savings</td>
+            <td class="add">+$450.53</td>
+          </tr>
+          <tr>
+            <td>Feb 20 2023</td>
+            <td>Movies</td>
+            <td>-$32.83</td>
+          </tr>
+          <tr>
+            <td>Feb 14 2023</td>
+            <td>Water Bill</td>
+            <td>-$103.45</td>
+          </tr>
+          <tr>
+            <td>Feb 12 2023</td>
+            <td>Invoice</td>
+            <td class="add">+$4513.37</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <div class="back-button">
+        <button onclick="window.history.back()">Back</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+	// Generate random card information
+	function generateCardInfo() {
+	  var cards = ['Visa', 'Master Card', 'American Express'];
+	  return cards[Math.floor(Math.random() * cards.length)];
+	}
+	
+	// Generate random account number
+	function generateAccountNumber() {
+	  return Math.floor(Math.random() * 1000000000) + 1000000000;
+	}
+	
+	// Generate random balance
+	function generateBalance() {
+	  return (Math.random() * 10000).toFixed(2);
+	}
+	
+	// Populate the card information, account number, and balance in the table
+	var cardInfoElements = document.getElementsByClassName('card-info');
+	var accNoElements = document.getElementsByClassName('acc-no');
+	var balanceElements = document.getElementsByClassName('balance');
+	
+	for (var i = 0; i < cardInfoElements.length; i++) {
+	  cardInfoElements[i].textContent = generateCardInfo();
+	  accNoElements[i].textContent = generateAccountNumber();
+	  balanceElements[i].textContent = generateBalance();
+	}
+  </script>
+
+</body>
+</html>

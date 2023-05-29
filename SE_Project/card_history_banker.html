@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/logincss.css">
+    <style>
+        .container {
+            border: 2px solid #CD9E28;
+            padding: 20px;
+        }
+        .back-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #000000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+    </style>
+    <title>Credit Card Management</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="logo"><img src="images/logo.png"></div>
+    </nav>
+    <div class="container" id="container">
+        <div>
+            <form action="cardTrans.html">
+                <div><br></div>
+                <div><br></div>
+                <div><br></div>
+                <h1>Enter Card Information</h1>
+                <div><br></div>
+                <input type="number" placeholder="Card Number" />
+                <input placeholder="Card Holder Name" />
+                <div><br></div>
+                <button>Search</button>
+                <div><br></div>
+                <a href="#" onclick="window.history.back()" class="back-button">Back</a> <!-- Added onclick attribute to redirect to previous page -->
+            </form>
+        </div>
+    </div>
+    <script src="js/loginjs.js"></script>
+</body>
+</html>

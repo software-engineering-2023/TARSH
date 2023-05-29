@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Credit Card Management</title>
+  
+  <!-- Link the CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/trans-history.css">
+  
+  <style>
+    /* CSS styles */
+    .purchase-history td {
+      text-align: center;
+    }
+    
+    .logo {
+      display: flex;
+      justify-content: center;
+    }
+    
+    .back-button {
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    .back-button button {
+      background-color: #000000;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+      margin: 0 auto; /* Center the button horizontally */
+      padding: 10px 20px;
+      font-size: 16px;
+      width: fit-content; /* Adjust the width to fit the button content */
+    }
+    
+    .cardNumber {
+      width: 100%;
+    }
+    
+    .redeem-button {
+      background-color: #00c614;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    .redeem-button2 {
+      background-color: #f30707;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    .content-container {
+      border: 2px solid #CD9E28;
+    }
+  </style>
+</head>
+<body>
+  <!-- Your HTML content goes here -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
+    <div class="logo"><img src="images/logo.png"></div>
+  </nav>
+
+  <div class="main-container">
+    <div class="current-balance">
+      <h2>Settle Cards</h2>
+    </div>
+    <div class="content-container">
+      <table class="purchase-history">
+        <thead>
+          <tr>
+            <td>Card</td>
+            <td>Amount</td>
+            <td></td>
+            <td></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="card-no"></td>
+            <td class="amount"></td>
+            <td><input type="number" placeholder="Amount" /></td>
+            <td><button class="redeem-button" onclick="deductAmount(this)">Pay</button></td>
+          </tr>
+          <tr>
+            <td class="card-no"></td>
+            <td class="amount"></td>
+            <td><input type="number" placeholder="Amount" /></td>
+            <td><button class="redeem-button" onclick="deductAmount(this)">Pay</button></td>
+          </tr>
+          <tr>
+            <td class="card-no"></td>
+            <td class="amount"></td>
+            <td><input type="number" placeholder="Amount" /></td>
+            <td><button class="redeem-button" onclick="deductAmount(this)">Pay</button></td>
+          </tr>
+          <tr>
+            <td class="card-no"></td>
+            <td class="amount"></td>
+            <td><input type="number" placeholder="Amount" /></td>
+            <td><button class="redeem-button" onclick="deductAmount(this)">Pay</button></td>
+          </tr>
+          <tr>
+            <td class="card-no"></td>
+            <td class="amount"></td>
+            <td><input type="number" placeholder="Amount" /></td>
+            <td><button class="redeem-button" onclick="deductAmount(this)">Pay</button></td>
+          </tr>
+          <tr>
+            <td class="card-no"></td>
+            <td class="amount"></td>
+            <td><input type="number" placeholder="Amount" /></td>
+            <td><button class="redeem-button" onclick="deductAmount(this)">Pay</button></td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <div class="back-button">
+        <button onclick="window.history.back()">Back</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript code
+    function deductAmount(button) {
+      var row = button.parentNode.parentNode; // Get the parent row of the clicked button
+      var amountCell = row.getElementsByClassName("amount")[0];
+      var currentAmount = parseInt(amountCell.textContent);
+      var input = row.querySelector("input[type='number']");
+      var enteredAmount = parseInt(input.value);
+
+      if (enteredAmount <= currentAmount) {
+        var newAmount = currentAmount - enteredAmount;
+        amountCell.textContent = newAmount;
+
+        regenerateTable(); // Regenerate the table rows with updated amounts
+      }
+
+      input.value = ""; // Clear the input field after deduction
+    }
+
+    function regenerateTable() {
+      var cardNos = document.getElementsByClassName("card-no");
+      var amounts = document.getElementsByClassName("amount");
+
+      // Regenerate table rows with updated amounts
+      for (var i = 0; i < cardNos.length; i++) {
+        var amountCell = amounts[i];
+        var currentAmount = parseInt(amountCell.textContent);
+        var row = amountCell.parentNode;
+
+        // Generate new amount for the row where deduction was made
+        if (currentAmount > 0) {
+          var newAmount = currentAmount;
+          amountCell.textContent = newAmount;
+        } else {
+          row.remove(); // Remove the row if the amount reaches 0 or below
+        }
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      var cardNos = document.getElementsByClassName("card-no");
+      var amounts = document.getElementsByClassName("amount");
+      
+      // Generate random card numbers and amounts
+      for (var i = 0; i < cardNos.length; i++) {
+        var cardNo = generateCardNumber();
+        var amount = generateAmount();
+        
+        cardNos[i].textContent = cardNo;
+        amounts[i].textContent = amount;
+      }
+      
+      function generateCardNumber() {
+        var cardNo = "";
+        for (var i = 0; i < 16; i++) {
+          cardNo += Math.floor(Math.random() * 10);
+          if ((i + 1) % 4 === 0 && i !== 15) {
+            cardNo += "-";
+          }
+        }
+        return cardNo;
+      }
+      
+      function generateAmount() {
+        return Math.floor(Math.random() * (3000 - 100 + 1)) + 100;
+      }
+    });
+  </script>
+</body>
+</html>

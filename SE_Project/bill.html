@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Payments/ Bills</title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="icon" href="images/fevicon.png" type="image/gif" />
+  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+  <style>
+    .logo {
+      display: flex;
+      justify-content: center;
+    }
+    .footer_section {
+      margin-top: 300px;
+      background-color: #ffffff;
+    }
+    .box_main {
+      height: 175px;
+      background-color: #CD9E28;
+      position: relative;
+      transform-style: preserve-3d;
+    }
+    .box_main .front,
+    .box_main .back {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backface-visibility: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      backface-visibility: hidden;
+      width: 100%;
+      height: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .box_main .front {
+      transform: rotateY(0);
+      background-color: #CD9E28;
+    }
+    .box_main .back {
+      transform: rotateY(180deg);
+      background-color: white;
+      color: black;
+      border: 2px solid #CD9E28;
+      overflow: hidden;
+    }
+    .box_main:hover .front {
+      transform: rotate3d(0, 1, 0, 180deg);
+    }
+    .box_main:hover .back {
+      transform: rotate3d(0, 1, 0, 0deg);
+    }
+    .box_main:hover{
+      background-color: white;
+    }
+    .box_main .content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    .box_main h3 {
+      margin: 0;
+    }
+    .due-button {
+      display: block;
+      margin-top: -5px;
+      margin-left: 28px;
+      text-align: center;
+      background-color: #CD9E28;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s;
+    }
+    .due-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+    .icon_1{
+      width: 90px; 
+      height: 90px;
+    }
+    .icon_2{
+      width: 150px; 
+      height: 150px;
+      margin-top: 33px;
+    }
+    .icon_3{
+      width: 150px; 
+      height: 150px;
+      margin-top: -33px;
+      margin-left: 100px;
+    }
+    .water_text {
+  color: white;
+  text-align: center;
+}
+.row{
+  margin-left: -40px;
+  justify-content:space-evenly;
+}
+.col-md-4{
+  margin-top: 10px;
+}
+
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
+    <div class="logo"><img src="images/logo.png"></div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="box_main">
+          <div class="front">
+            <div class="content">
+              <h3 class="water_text"></h3>
+              <div class="icon_1"><img src="images/water.png"></div>
+            </div>
+          </div>          
+          <div class="back">
+            <div class="content">
+              <p style="line-height: 2px;">Vendor: EEFC</p>
+              <p class="amount-text" style="line-height: 2px;">Amount: 100</p>
+              <p class="due-text" style="line-height: 2px;">Due: 29/5/2023</p>
+              <div class="center">
+                <a class="due-button" onclick="updateText(this)">Pay Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="box_main">
+          <div class="front">
+            <div class="content">
+              <h3 class="water_text"></h3>
+              <div class="icon_2"><img src="images/elect.png"></div>
+            </div>
+          </div>
+          <div class="back">
+            <div class="content">
+              <p style="line-height: 2px;">Vendor: EEHC</p>
+              <p class="amount-text" style="line-height: 2px;">Amount: 100</p>
+              <p class="due-text" style="line-height: 2px;">Due: 29/5/2023</p>
+              <div class="center">
+                <a class="due-button" onclick="updateText(this)">Pay Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="box_main">
+          <div class="front">
+            <div class="content">
+              <h3 class="water_text"></h3>
+              <div class="icon_2"><img src="images/gas.png"></div>
+            </div>
+          </div>
+          <div class="back">
+            <div class="content">
+              <p style="line-height: 2px;">Vendor: EGAS</p>
+              <p class="amount-text" style="line-height: 2px;">Amount: 100</p>
+              <p class="due-text" style="line-height: 2px;">Due: 29/5/2023</p>
+              <div class="center">
+                <a class="due-button" onclick="updateText(this)">Pay Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="box_main">
+          <div class="front">
+            <div class="content">
+              <h3 class="water_text"></h3>
+              <div class="icon_1"><img src="images/tele.png"></div>
+            </div>
+          </div>
+          <div class="back">
+            <div class="content">
+              <p style="line-height: 2px;">Vendor: WE</p>
+              <p class="amount-text" style="line-height: 2px;">Amount: 100</p>
+              <p class="due-text" style="line-height: 2px;">Due: 29/5/2023</p>
+              <div class="center">
+                <a class="due-button" onclick="updateText(this)">Pay Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <a href="services.html" class="box_main button">
+          <div class="button">
+            <div class="content">
+              <h3 class="water_text"></h3>
+              <div class="icon_3"><img src="images/back.png"></div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <footer class="footer_section">
+    <!-- Footer content goes here -->
+  </footer>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/custom.js"></script>
+  <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="js/owl.carousel.js"></script>
+  <script src="js/jquery.form.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/custom-form.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+  <script>
+   function updateText(button) {
+      // Find the parent box of the clicked button
+      var box = button.closest('.box_main');
+      
+      // Find the amount and due text elements within the box
+      var amountText = box.querySelector('.amount-text');
+      var dueText = box.querySelector('.due-text');
+      
+      // Update the text to "Amount: None" and "Due: None"
+      amountText.textContent = 'Amount: None';
+      dueText.textContent = 'Due: None';
+    }
+  </script>
+</body>
+</html>

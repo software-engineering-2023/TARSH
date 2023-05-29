@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/logincss.css">
+    <style>
+        .container {
+            border: 2px solid #CD9E28;
+            padding: 20px;
+        }
+        .back-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #000000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+    </style>
+    <title>Account Transactions</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="logo"><img src="images/logo.png"></div>
+    </nav>
+    <div class="container" id="container">
+        <div>
+            <form action="trans_history.html">
+                <div><br></div>
+                <div><br></div>
+                <div><br></div>
+                <h1>Client Account Transactions</h1>
+                <div><br></div>
+                <input type="number" placeholder="National ID" />
+                <div><br></div>
+                <div><br></div>
+                <div><br></div>
+                <button>Search</button>
+                
+                <a href="bankerservices.html" class="back-button">Back</a> <!-- Updated the HTML to use the back-button class for the <a> tag -->
+            </form>
+        </div>
+    </div>
+    <script src="js/loginjs.js"></script>
+</body>
+</html>

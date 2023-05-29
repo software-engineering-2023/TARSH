@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Manage Loans</title>
+  
+  <!-- Link the CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/trans-history.css">
+  
+  <style>
+    .purchase-history td {
+      text-align: center;
+    }
+    
+    .logo {
+      display: flex;
+      justify-content: center;
+    }
+    
+    .back-button {
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    .back-button button {
+      background-color: #000000;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+      margin: 0 auto; /* Center the button horizontally */
+      padding: 10px 20px;
+      font-size: 16px;
+      width: fit-content; /* Adjust the width to fit the button content */
+    }
+    
+    .cardNumber {
+      width: 100%;
+    }
+    
+    .redeem-button {
+      background-color: #00c614;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    .redeem-button2 {
+      background-color: #f30707;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    .content-container {
+      border: 2px solid #CD9E28;
+    }
+  </style>
+</head>
+<body>
+  <!-- Your HTML content goes here -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
+    <div class="logo"><img src="images/logo.png"></div>
+  </nav>
+
+  <div class="main-container">
+    <div class="current-balance">
+      <h2>Loan Requests</h2>
+    </div>
+    <div class="content-container">
+      <table class="purchase-history">
+        <thead>
+          <tr>
+            <td>Account</td>
+            <td>Loan</td>
+            <td>Type</td>
+            <td></td>
+            <td></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="account"></td>
+            <td class="loan"></td>
+            <td class="type"></td>
+            <td><button class="redeem-button">Accept</button></td>
+            <td><button class="redeem-button2">Reject</button></td>
+          </tr>
+          <tr>
+            <td class="account"></td>
+            <td class="loan"></td>
+            <td class="type"></td>
+            <td><button class="redeem-button">Accept</button></td>
+            <td><button class="redeem-button2">Reject</button></td>
+          </tr>
+          <tr>
+            <td class="account"></td>
+            <td class="loan"></td>
+            <td class="type"></td>
+            <td><button class="redeem-button">Accept</button></td>
+            <td><button class="redeem-button2">Reject</button></td>
+          </tr>
+          <tr>
+            <td class="account"></td>
+            <td class="loan"></td>
+            <td class="type"></td>
+            <td><button class="redeem-button">Accept</button></td>
+            <td><button class="redeem-button2">Reject</button></td>
+          </tr>
+          <tr>
+            <td class="account"></td>
+            <td class="loan"></td>
+            <td class="type"></td>
+            <td><button class="redeem-button">Accept</button></td>
+            <td><button class="redeem-button2">Reject</button></td>
+          </tr>
+          <tr>
+            <td class="account"></td>
+            <td class="loan"></td>
+            <td class="type"></td>
+            <td><button class="redeem-button">Accept</button></td>
+            <td><button class="redeem-button2">Reject</button></td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <div class="back-button">
+        <button onclick="window.history.back()">Back</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Function to generate a random account number
+    function generateAccountNumber() {
+      return Math.floor(Math.random() * 1000000000); // Adjust the range as needed
+    }
+    
+    // Function to generate a random loan ID
+    function generateLoanID() {
+      return Math.floor(Math.random() * 1000000); // Adjust the range as needed
+    }
+    
+    // Function to generate a random loan type
+    function generateLoanType() {
+      var loanTypes = ['Personal Loan', 'Home Loan', 'Auto Loan', 'Education Loan']; // Add more loan types as needed
+      return loanTypes[Math.floor(Math.random() * loanTypes.length)];
+    }
+    
+    // Populate the table cells with random values
+    window.addEventListener('DOMContentLoaded', function() {
+      var rows = document.querySelectorAll('.purchase-history tbody tr');
+      
+      // Iterate over the rows and assign random values
+      rows.forEach(function(row) {
+        var accountCell = row.querySelector('.account');
+        var loanCell = row.querySelector('.loan');
+        var typeCell = row.querySelector('.type');
+        
+        var accountNumber = generateAccountNumber();
+        var loanID = generateLoanID();
+        var loanType = generateLoanType();
+        
+        accountCell.textContent = accountNumber;
+        loanCell.textContent = loanID;
+        typeCell.textContent = loanType;
+      });
+    });
+    
+    // Event listener for the "Accept" button
+    var acceptButtons = document.querySelectorAll('.redeem-button');
+    acceptButtons.forEach(function(button) {
+      button.addEventListener('click', function() {
+        var row = this.parentNode.parentNode;
+        row.parentNode.removeChild(row);
+      });
+    });
+    
+    // Event listener for the "Reject" button
+    var rejectButtons = document.querySelectorAll('.redeem-button2');
+    rejectButtons.forEach(function(button) {
+      button.addEventListener('click', function() {
+        var row = this.parentNode.parentNode;
+        row.parentNode.removeChild(row);
+      });
+    });
+  </script>
+</body>
+</html>

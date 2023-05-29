@@ -1,0 +1,73 @@
+<head>
+    <link rel="stylesheet" href="css/logincss.css">
+    <title>Manage Accounts</title>
+    <style>
+        .container {
+            border: 2px solid #CD9E28;
+            padding: 20px;
+        }
+        .back-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #000000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="logo"><img src="images/logo.png"></div>
+</nav>
+<div class="container" id="container">
+
+    <div>
+        <form action="services.html">
+            <h1>Make a Transfer</h1>
+            <div>
+                <br>
+            </div>
+            <div class="Type">
+                <label for="Type">Type</label>
+                <select id="Account Type">
+                    <option value="Internal">Internal</option>
+                    <option value="Domestic">Domestic</option>
+                    <option value="International">International</option>
+                </select>
+            </div>
+            <div>
+                <br>
+            </div>
+            <input type="number" placeholder="Account Number" />
+            <div>
+                <br>
+            </div>
+            <input type="number" placeholder="Amount" />
+            <div>
+                <br>
+            </div>
+            <div class="Currency">
+                <label for="Currency Type">Currency</label>
+                <select id="Currency">
+                    <option value="USD">USD</option>
+                    <option value="EGP">EGP</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                    <option value="CHF">CHF</option>
+                    <option value="SAR">SAR</option>
+                    <option value="KWD">KWD</option>
+                </select>
+            </div>
+            <div>
+                <br>
+            </div>
+            <button onclick="alert('Transaction will be processed shortly!')">Send</button>
+            <a href="services.html" class="back-button">Back</a>
+        </form>
+    </div>
+</div>
+<script src="js/loginjs.js"></script>

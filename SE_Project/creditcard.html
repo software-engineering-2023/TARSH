@@ -1,0 +1,61 @@
+
+    <link rel="stylesheet" href="css/logincss.css">
+    <title>Credit Card Management</title>
+    <style>
+        .container {
+            border: 2px solid #CD9E28;
+            padding: 20px;
+        }
+        .back-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #000000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="logo"><img src="images/logo.png"></div>
+</nav>
+<div class="container" id="container">
+
+    <div>
+        <form action="services.html">
+            <h1>Apply for a credit card</h1>
+            <div>
+                <br>
+            </div>
+            <div class="Credit card">
+                <label for="Card type">Card type</label>
+                <select id="Card type">
+                    <option value="Savings">Visa Gold</option>
+                    <option value="Current">Visa Classic</option>
+                    <option value="Youth">Master Card Platinum</option>
+                    <option value="Savings">Master Card Standard</option>
+                    <option value="Current">Master Card Titanium</option>
+                    <option value="Youth">Visa Platinum</option>
+                </select>
+            </div>
+            <div>
+                <br>
+            </div>
+            <input type="number" placeholder="Initial Deposit" />
+            <div>
+                <br>
+            </div>
+            
+            <div>
+                <br>
+            </div>
+            <button onclick="alert('Request submitted successfully!')">Apply</button>
+            <a href="services.html" class="back-button">Back</a>
+        </form>
+    </div>
+</div>
+<script src="js/loginjs.js"></script>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Manage Accounts</title>
+  
+  <!-- Link the CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/trans-history.css">
+  
+  <style>
+      .purchase-history td {
+    text-align: center;
+  }
+    .logo {
+      display: flex;
+      justify-content: center;
+    }
+    
+    .back-button {
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    .back-button button {
+      background-color: #000000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            margin: 0 auto; /* Center the button horizontally */
+            padding: 10px 20px;
+            font-size: 16px;
+            width: fit-content; /* Adjust the width to fit the button content */
+      
+    }
+    
+    .cardNumber {
+      width: 100%;
+    }
+    
+    .redeem-button {
+      background-color: #00c614;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .redeem-button2 {
+      background-color: #f30707;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .content-container {
+            border: 2px solid #CD9E28;
+            
+    }
+    
+  </style>
+</head>
+<body>
+  <!-- Your HTML content goes here -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
+    <div class="logo"><img src="images/logo.png"></div>
+  </nav>
+
+  <div class="main-container">
+    <div class="current-balance">
+      <h2>Account Requests</h2>
+    </div>
+    <div class="content-container">
+      <table class="purchase-history">
+        <thead>
+          <tr>
+            <td>Account</td>
+            <td>Type</td>
+            <td>Request</td>
+            <td></td>
+            <td></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="acc-no"></td>
+            <td class="points"></td>
+            <td class="Request"></td>
+            <td><button class="redeem-button">Accept</button></td>
+            <td><button class="redeem-button2">Reject</button></td>
+          </tr>
+          <tr>
+            <td class="acc-no"></td>
+            <td class="points"></td>
+            <td class="Request"></td>
+            <td><button class="redeem-button">Accept</button></td>
+            <td><button class="redeem-button2">Reject</button></td>
+          </tr>
+          <tr>
+            <td class="acc-no"></td>
+            <td class="points"></td>
+            <td class="Request"></td>
+            <td><button class="redeem-button">Accept</button></td>
+            <td><button class="redeem-button2">Reject</button></td>
+          </tr>
+          <tr>
+            <td class="acc-no"></td>
+            <td class="points"></td>
+            <td class="Request"></td>
+            <td><button class="redeem-button">Accept</button></td>
+            <td><button class="redeem-button2">Reject</button></td>
+          </tr>
+          <tr>
+            <td class="acc-no"></td>
+            <td class="points"></td>
+            <td class="Request"></td>
+            <td><button class="redeem-button">Accept</button></td>
+            <td><button class="redeem-button2">Reject</button></td>
+          </tr>
+          <tr>
+            <td class="acc-no"></td>
+            <td class="points"></td>
+            <td class="Request"></td>
+            <td><button class="redeem-button">Accept</button></td>
+            <td><button class="redeem-button2">Reject</button></td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <div class="back-button">
+        <button onclick="window.history.back()">Back</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Helper function to generate random account numbers
+    function generateAccountNumber() {
+      var accountNumber = Math.floor(Math.random() * 1000000000); // Generates a 9-digit random number
+      return accountNumber;
+    }
+  
+    // Helper function to generate random account types
+    function generateAccountType() {
+      var accountTypes = ['Savings', 'Youth', 'Checking', 'Business', 'Credit'];
+      var randomIndex = Math.floor(Math.random() * accountTypes.length);
+      return accountTypes[randomIndex];
+    }
+  
+    // Helper function to generate random request statuses (Open/Close)
+    function generateRequestStatus() {
+      var requestStatuses = ['Open', 'Close'];
+      var randomIndex = Math.floor(Math.random() * requestStatuses.length);
+      return requestStatuses[randomIndex];
+    }
+  
+    // Remove the row when "Accept" button is clicked
+    function handleAcceptButtonClick(event) {
+      var row = event.target.parentNode.parentNode;
+      row.parentNode.removeChild(row);
+    }
+  
+    // Remove the row when "Reject" button is clicked
+    function handleRejectButtonClick(event) {
+      var row = event.target.parentNode.parentNode;
+      row.parentNode.removeChild(row);
+    }
+  
+    // Populate the table with random data
+    document.addEventListener('DOMContentLoaded', function() {
+      var accountNumbers = document.getElementsByClassName('acc-no');
+      var accountTypes = document.getElementsByClassName('points');
+      var requestStatuses = document.getElementsByClassName('Request');
+      var acceptButtons = document.getElementsByClassName('redeem-button');
+      var rejectButtons = document.getElementsByClassName('redeem-button2');
+  
+      for (var i = 0; i < accountNumbers.length; i++) {
+        accountNumbers[i].textContent = generateAccountNumber();
+        accountTypes[i].textContent = generateAccountType();
+        requestStatuses[i].textContent = generateRequestStatus();
+  
+        acceptButtons[i].addEventListener('click', handleAcceptButtonClick);
+        rejectButtons[i].addEventListener('click', handleRejectButtonClick);
+      }
+    });
+  </script>
+  
+  
+
+</body>
+</html>

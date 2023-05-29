@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- basic -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- mobile metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<!-- site metas -->
+<title>Home</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content=""> 
+<!-- bootstrap css -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<!-- style css -->
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<!-- Responsive-->
+<link rel="stylesheet" href="css/responsive.css">
+<!-- fevicon -->
+<link rel="icon" href="images/fevicon.png" type="image/gif" />
+<!-- Scrollbar Custom CSS -->
+<link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+<!-- Tweaks for older IEs-->
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+<!-- owl stylesheets --> 
+<link rel="stylesheet" href="css/owl.carousel.min.css">
+<link rel="stylesheet" href="css/owl.theme.default.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+<style>
+  .notification_bell {
+    position: relative;
+    display: inline-block;
+    margin-left: 10px;
+    cursor: pointer;
+    margin-top: 12px;
+  }
+  
+  .notification_bell i {
+    font-size: 24px;
+  }
+  
+  .notification_dropdown {
+    position: absolute;
+    top: 30px;
+    right: -200px;
+    min-width: 200px;
+    background-color: #1b5a8d;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: none;
+    border-radius: 10px 10px 10px 10px;
+  }
+  
+  .notification_dropdown ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .notification_dropdown li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  
+  .notification_dropdown li:last-child {
+    border-bottom: none;
+  }
+  
+  .notification_dropdown li:hover {
+    background-color: #ff5a58;
+  }
+  .row {
+    display: inline-flex;
+  }
+  .team_section .container {
+        display: flex;
+        flex-wrap: wrap;;
+      }
+
+  .team_section_2 .col-sm-3 {
+    display: inline-block;
+    vertical-align: top;
+    width: 25%;
+  }
+  .image_12 img {
+  width: 20px;
+  height: 30px;
+}
+.additional-info{
+  width: 100%;
+    float: left;
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: -35px;
+}
+.footer_section {
+    margin-top: 100px; /* Adjust the margin as needed */
+  }
+  .sign-out-container {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.sign-out-btn {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.sign-out-logo {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 35px;
+  
+  position: absolute;
+}
+  </style>
+</head>
+<body>
+  <!--header section start -->
+    <div class="header_section">
+      <div class="header_left">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="services.html">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="team.html">Team</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact Us</a>
+              </li>
+              <li class="nav-item notification_bell">
+                <i class="fa fa-bell"></i>
+                <div class="notification_dropdown">
+                  <ul>
+                    <li>Reminder: Gas bill due tomorrow</li>
+                    <li>Notifciation: Your loan 29011 got accepted</li>
+                    <li>Notification: Bank issues new loan with great intrests</li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="login.html">
+                  <img src="images/logout.png" alt="Sign Out" class="sign-out-logo">
+                </a>
+              </li>   
+            </ul>
+          </div>
+        </nav>
+        <div class="banner_main">
+          <h1 class="banner_taital">Tarsh <br>International</h1>
+          <p class="banner_text">Welcome to Tarsh Bank, your trusted financial partner. At Tarsh Bank, we understand the importance of financial stability and empowering individuals and businesses to achieve their financial goals. With our comprehensive range of banking services, we are committed to providing you with the utmost convenience, security, and personalized support.</p>
+          <div class="btn_main">
+            <div class="more_bt"><a href="about.html">Read More </a></div>
+            <div class="contact_bt"><a href="contact.html">Contact Us</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="header_right">
+        <img src="images/banner-img.png" class="banner_img">
+      </div>
+    </div>
+    <!--header section end -->
+    <!--services section start -->
+    <div class="what_we_do_section layout_padding">
+      <div class="container">
+        <h1 class="what_taital">WHAT WE DO</h1>
+       
+        <div class="what_we_do_section_2">
+          <div class="row">
+            <div class="col-lg-3 col-sm-6">
+              <div class="box_main">
+                <div class="icon_1"><img src="images/icon-1.png"></div>
+                <h3 class="accounting_text">Accounting</h3>
+                <p class="lorem_text">We offer comprehensive accounting services to meet the financial needs of individuals and businesses.</p>
+                <div class="moremore_bt_1">
+                  <a href="#" class="read-more">Read More </a>
+                </div>
+                <div class="additional-info" style="display: none;">
+                  <p>Our experienced team of accounting professionals is dedicated to providing accurate and reliable financial information to support your financial goals.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+              <div class="box_main">
+                <div class="icon_1"><img src="images/icon-2.png"></div>
+                <h3 class="accounting_text">Advisor</h3>
+                <p class="lorem_text">We understand the importance of financial guidance in making well-informed decisions that can shape your financial future.</p>
+                <div class="moremore_bt_1">
+                  <a href="#" class="read-more">Read More </a>
+                </div>
+                <div class="additional-info" style="display: none;">
+                  <p>Our team of experienced financial advisors is here to provide personalized and comprehensive advisory services tailored to your unique financial needs.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+              <div class="box_main">
+                <div class="icon_1"><img src="images/icon-3.png"></div>
+                <h3 class="accounting_text">Investment</h3>
+                <p class="lorem_text">We offer a range of investment solutions designed to help you grow your wealth and achieve your financial goals.</p>
+                <div class="moremore_bt_1">
+                  <a href="#" class="read-more">Read More </a>
+                </div>
+                <div class="additional-info" style="display: none;">
+                  <p>Our dedicated team of investment professionals is committed to delivering personalized investment strategies tailored to your unique needs.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+              <div class="box_main">
+                <div class="icon_1"><img src="images/icon-4.png"></div>
+                <h3 class="accounting_text">Financial</h3>
+                <p class="lorem_text">We understand the importance of sound financial management and the impact it has on your overall well-being.</p>
+                <div class="moremore_bt_1">
+                  <a href="#" class="read-more">Read More </a>
+                </div>
+                <div class="additional-info" style="display: none;">
+                  <p>Our comprehensive range of financial services is designed to address your financial needs and empower you to achieve financial success. </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--services section end -->
+    <div class="client_section layout_padding">
+      <div class="container">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <h1 class="what_taital">Keep up with our latest news</h1>
+              <div class="client_section_2 layout_padding">
+                <ul>
+                  <li><img src="images/round-1.png" class="round_1"></li>
+                  <li><img src="images/img-11.png" class="image_11"></li>
+                  <li><img src="images/round-2.png" class="round_2"></li>
+                </ul>
+                <p class="dummy_text">Breaking Updates: Latest News and Insights on Credit Cards</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <h1 class="what_taital">keep up with our latest news</h1>
+              <div class="client_section_2 layout_padding">
+                <ul>
+                  <li><img src="images/round-1.png" class="round_1"></li>
+                  <li><img src="images/food.png" class="image_11"></li>
+                  <li><img src="images/round-2.png" class="round_2"></li>
+                </ul>
+                <p class="dummy_text">Community Support in Action: Recent Developments and Impactful Stories from Local Food
+                  Banks</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <h1 class="what_taital">Keep up with our latest news</h1>
+              <div class="client_section_2 layout_padding">
+                <ul>
+                  <li><img src="images/round-1.png" class="round_1"></li>
+                  <li><img src="images/loan.png" class="image_11"></li>
+                  <li><img src="images/round-2.png" class="round_2"></li>
+                </ul>
+                <p class="dummy_text">Unprecedented Relief: Government Announces Complete Forgiveness of All Student Loans
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--team section start -->
+    <div class="team_section layout_padding">
+      <div class="container">
+        <h1 class="what_taital">Our Team</h1>
+        <div class="team_section_2 layout_padding">
+          <div class="row">
+            <div class="col-sm">
+              <img src="images/yoyo.png" class="image_7">
+              <p class="readable_text">Youssef Ahmed</p>
+              <p class="readable_text_1">52-4653</p>
+            </div>
+            <div class="col-sm">
+              <img src="images/roshdy.png" class="image_7">
+              <p class="readable_text">Karim Roshdy</p>
+              <p class="readable_text_1">52-0802</p>
+            </div>
+            <div class="col-sm">
+              <img src="images/shifo.png" class="image_7">
+              <p class="readable_text">Mohamed Sherif</p>
+              <p class="readable_text_1">52-0982</p>
+            </div>
+            <div class="col-sm">
+              <img src="images/hoss.png" class="image_7">
+              <p class="readable_text">Hossam Waleed</p>
+              <p class="readable_text_1">52-3658</p>
+            </div>
+            <div class="col-sm">
+              <img src="images/mizo.png" class="image_7">
+              <p class="readable_text">Omar Hafez</p>
+              <p class="readable_text_1">52-3035</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <!--team section end -->
+    <!--footer section start -->
+    <div class="footer_section layout_padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-sm-6">
+            <h4 class="about_text">Information</h4>
+            <div class="location_text"><img src="images/map-icon.png"><a href="https://goo.gl/maps/CyJ8gt8bRTJrZtr37?coh=178572&entry=tt" target="_blank" style="color: white;"><span class="padding_left_15">Locations</span></a></div>
+            <div class="location_text"><img src="images/call-icon.png"><span class="padding_left_15">+20 1054205690</span></div>
+            <div class="location_text"><img src="images/mail-icon.png"><span class="padding_left_15">tarsh@tib.eg.com</span></div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <h4 class="about_text">About TIB</h4>
+            <p class="dolor_text">Our mission is to provide reliable and innovative banking solutions that empower individuals and businesses to achieve
+                                  their financial goals.</p>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <h4 class="about_text">Follow Us On</h4>
+            <div class="footer_images">
+              <div class="footer_images">
+                <div class="footer_images_left">
+                  <div class="image_12"><img src="images/fb-icon1.png"></div>
+                  <div class="image_12"><img src="images/twitter-icon1.png"></div>
+                  <div class="image_12"><img src="images/Instagram.png"></div>
+                </div>
+                <div class="footer_images_right">
+                  <div class="image_12"><img src="images/linkedin-icon1.png"></div>
+                  <div class="image_12"><img src="images/youtub-icon1.png"></div>
+                  <div class="image_12"><img src="images/Tiktok.png"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <h4 class="about_text">Newsletter</h4>
+            <input type="text" class="mail_text" placeholder="Enter your email" name="Enter your email">
+            <div onclick="alert('You are now subscribed to our newsletter!')" class="subscribe_bt"><a href="#">Subscribe</a></div>
+            <div class="footer_social_icon">
+            </div>
+          </div>
+        </div>
+        <!-- copyright section start -->
+        <div class="copyright_section">
+          <div class="copyright_text">Copyright 2023 All Right Reserved By TIB</div>
+        </div>
+        <!-- copyright section end -->
+      </div>
+    </div>
+    <!--footer section end -->
+    <!-- Javascript files-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.0.0.min.js"></script>
+    <script src="js/plugin.js"></script>
+    <!-- sidebar -->
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/custom.js"></script>
+    <!-- javascript --> 
+    <script src="js/owl.carousel.js"></script>
+    <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script> 
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var notificationBell = document.querySelector(".notification_bell");
+        var notificationDropdown = document.querySelector(".notification_dropdown");
+        
+        notificationBell.addEventListener("click", function() {
+          if (notificationDropdown.style.display === "block") {
+            notificationDropdown.style.display = "none";
+          } else {
+            notificationDropdown.style.display = "block";
+          }
+        });
+      });
+      function handleReadMoreButtonClick(event) {
+    event.preventDefault();
+    var button = event.target;
+    var boxMain = button.parentNode.parentNode;
+    var additionalInfo = boxMain.querySelector('.additional-info');
+    
+    if (additionalInfo.style.display === 'none') {
+      additionalInfo.style.display = 'block';
+      button.textContent = 'Read Less';
+      boxMain.appendChild(button.parentNode);
+    } else {
+      additionalInfo.style.display = 'none';
+      button.textContent = 'Read More';
+      boxMain.insertBefore(button.parentNode, additionalInfo);
+    }
+  }
+
+  // Add click event listeners to "Read More" buttons
+  var readMoreButtonElements = document.getElementsByClassName('read-more');
+  for (var i = 0; i < readMoreButtonElements.length; i++) {
+    readMoreButtonElements[i].addEventListener('click', handleReadMoreButtonClick);
+  }
+    </script>
+    
+</body>
+</html>
